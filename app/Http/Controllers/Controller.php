@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+
 abstract class Controller
 {
-    // O controller base permanece neutro; regras de autorização e validação
-    // ficam nos controllers e Form Requests que realmente precisam delas.
+    use AuthorizesRequests, ValidatesRequests;
 }
